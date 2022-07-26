@@ -13,6 +13,7 @@ Stock initialize() {
 	p1.supplier = poland;
 	Stock stock;
 	stock.getStock();
+
 }
 
 
