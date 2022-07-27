@@ -18,7 +18,7 @@ std::vector<Product> Stock::filterBySupplier(std::vector<Product> stock, supplie
     std::vector<Product> output;
 
     for (int i = 0; i < stock.size(); i++) {
-        if (stock[i].category == sup)
+        if (stock[i].supplier == sup)
             output.push_back(stock[i]);
     }
     return output;
