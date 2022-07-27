@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ShoppingHandler.h"
 //#include "Product.h"
 //#include "Stock.h"
 //#include "Cart.h"
@@ -7,6 +8,9 @@
 //Stock initialize();
 
 int main() {
+
+	ShoppingHandler shoppingHandler;
+	shoppingHandler.start();
 
 	return 0;
 }

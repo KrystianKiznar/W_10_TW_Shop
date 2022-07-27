@@ -1,0 +1,17 @@
+#pragma once
+#include <iostream>
+
+class Window {
+public:
+	/// <summary>
+	/// Function that does things that particular window is suppesed to do (like
+	/// displaying menu, adding items to the cart, letting user decide what to do
+	/// next... etc.)
+	/// </summary>
+	/// <returns> Next state's id </returns>
+	virtual int displayWindow() = 0;
+
+private:
+
+};
+
