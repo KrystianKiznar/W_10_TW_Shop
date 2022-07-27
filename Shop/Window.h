@@ -10,8 +10,11 @@ public:
 	/// </summary>
 	/// <returns> Next state's id </returns>
 	virtual int displayWindow() = 0;
+	int takeUserInput(int start, int end);
 
 private:
+
+	
 
 };
 

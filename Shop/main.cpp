@@ -8,6 +8,10 @@
 //Stock initialize();
 
 int main() {
+	MenuWindow w;
+	int c;
+	c = w.takeUserInput(1, 5);
+	std::cout << c;
 
 	ShoppingHandler shoppingHandler;
 	shoppingHandler.start();
