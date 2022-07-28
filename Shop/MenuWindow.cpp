@@ -29,5 +29,5 @@ int MenuWindow::displayWindow() {
 
 	system("pause");
 
-	return nextState;
+	return 3;
 }

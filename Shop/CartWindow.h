@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+
 class CartWindow :
     public Window {
 public:

@@ -4,23 +4,28 @@ ShoppingHandler::ShoppingHandler() {}
 
 void ShoppingHandler::start() {
 
-	int state = 0; //TODO: Replace with enum
 
-	while (state != -1) {
+
+	state state = menu; //TODO: Replace with enum
+
+	while (state != exit) {
 
 		switch (state) {
-		case 0: // MENU
+		case menu:
 			window = &menuWindow;
 			break;
-		case 1: // LIST
+		case list:
 			window = &listWindow;
 			break;
-		case 2: // CART
+		case listOptions:
+			window = &listOptionsWindow;
+			break;
+		case cart:
 			window = &cartWindow;
 			break;
 		}
 
-		state = window->displayWindow();
+		state = static_cast<ShoppingHandler::state>(window->displayWindow());
 	}
 
 }

@@ -3,9 +3,21 @@
 #include "MenuWindow.h"
 #include "ListWindow.h"
 #include "CartWindow.h"
+#include "ListOptionsWindow.h"
+
+class Window;
 
 class ShoppingHandler {
 public:
+	enum state {
+		exit,
+		menu,
+		listOptions,
+		list,
+		cart,
+		other
+	};
+
 	ShoppingHandler();
 	void start();
 
@@ -14,5 +26,6 @@ private:
 	MenuWindow menuWindow;
 	ListWindow listWindow;
 	CartWindow cartWindow;
+	ListOptionsWindow listOptionsWindow;
 };
 

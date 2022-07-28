@@ -6,6 +6,7 @@ class Stock
 {
 private:
 	std::vector<Product> stock;
+
 public:
 	std::vector<Product> filterByCategory(enum category);
 	std::vector<Product> filterBySupplier(enum supplier);

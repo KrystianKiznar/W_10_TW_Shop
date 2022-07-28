@@ -14,23 +14,23 @@ int main() {
 	ShoppingHandler shoppingHandler;
 	shoppingHandler.start();
 
-	std::vector<Product *> stockPointers = theStock.getStockPointers();
+	//std::vector<Product *> stockPointers = theStock.getStockPointers();
 
-	theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByName());
+	//theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByName());
 
-	for (int i = 0; i < stockPointers.size(); i++) {
-		stockPointers[i]->print();
-		std::cout << std::endl;
-	}		
+	//for (int i = 0; i < stockPointers.size(); i++) {
+	//	stockPointers[i]->print();
+	//	std::cout << std::endl;
+	//}		
 
-	theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByPrice());
+	//theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByPrice());
 
-	for (int i = 0; i < stockPointers.size(); i++) {
-		stockPointers[i]->print();
-		std::cout << std::endl;
-	}
+	//for (int i = 0; i < stockPointers.size(); i++) {
+	//	stockPointers[i]->print();
+	//	std::cout << std::endl;
+	//}
 
-	int a = getchar();
+	//int a = getchar();
 
 	return 0;
 }

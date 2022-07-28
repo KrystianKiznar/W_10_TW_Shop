@@ -6,5 +6,5 @@ int ListWindow::displayWindow() {
 
 	system("pause");
 
-	return 2;
+	return 0;
 }

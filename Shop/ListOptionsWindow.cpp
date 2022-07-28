@@ -32,5 +32,5 @@ int ListOptionsWindow::displayWindow() {
 
 	system("pause");
 
-	return nextState;
+	return 1;
 }
