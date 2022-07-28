@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Product.h"
 #include "Stock.h"
 //#include "Cart.h"
@@ -10,16 +10,24 @@ Stock theStock = initialize();
 
 int main() {
 
+	//kolorowe tło? 
+
 	std::vector<Product *> stockPointers = theStock.getStockPointers();
 
 	theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByName());
-
+	std::cout << "\n                SORTED BY: Name A-Z\n\n" << std::endl;
+	std::cout << " PRODUCT NAME  " << "      PRICE    " << "  CATEGORY"  << "           SUPPLIER\n" << std::endl;
+	
 	for (int i = 0; i < stockPointers.size(); i++) {
 		stockPointers[i]->print();
 		std::cout << std::endl;
 	}		
 
 	theStock.sort(stockPointers, 0, stockPointers.size() - 1, CompareByPrice());
+
+	std::cout << "\n                SORTED BY: Price ASC\n\n" << std::endl;
+
+	std::cout << " PRODUCT NAME  " << "      PRICE    " << "  CATEGORY" << "           SUPPLIER\n" << std::endl;
 
 	for (int i = 0; i < stockPointers.size(); i++) {
 		stockPointers[i]->print();
@@ -147,7 +155,7 @@ Stock initialize() {
 
 	Product p15;
 	p15.name = "White Tshirt";
-	p15.id = 111;
+	p15.id = 114;
 	p15.price = 15.15;
 	p15.category = clothes;
 	p15.supplier = poland;
@@ -155,7 +163,7 @@ Stock initialize() {
 
 	Product p16;
 	p16.name = "Dress";
-	p16.id = 112;
+	p16.id = 115;
 	p16.price = 30.99;
 	p16.category = clothes;
 	p16.supplier = germany;
@@ -163,7 +171,7 @@ Stock initialize() {
 
 	Product p17;
 	p17.name = "Kubotas";
-	p17.id = 113;
+	p17.id = 116;
 	p17.price = 3.01;
 	p17.category = clothes;
 	p17.supplier = china;
@@ -171,7 +179,7 @@ Stock initialize() {
 
 	Product p18;
 	p18.name = "Shampoo";
-	p18.id = 111;
+	p18.id = 117;
 	p18.price = 3.99;
 	p18.category = cosmetics;
 	p18.supplier = poland;
@@ -179,7 +187,7 @@ Stock initialize() {
 
 	Product p19;
 	p19.name = "Soap";
-	p19.id = 112;
+	p19.id = 118;
 	p19.price = 1.01;
 	p19.category = cosmetics;
 	p19.supplier = germany;
@@ -187,7 +195,7 @@ Stock initialize() {
 
 	Product p20;
 	p20.name = "Shower gel";
-	p20.id = 113;
+	p20.id = 119;
 	p20.price = 2.30;
 	p20.category = cosmetics;
 	p20.supplier = china;
