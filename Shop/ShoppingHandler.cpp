@@ -15,6 +15,9 @@ void ShoppingHandler::start() {
 		case 1: // LIST
 			window = &listWindow;
 			break;
+		case 2: // CART
+			window = &cartWindow;
+			break;
 		}
 
 		state = window->displayWindow();

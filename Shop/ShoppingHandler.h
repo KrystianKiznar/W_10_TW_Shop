@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "MenuWindow.h"
 #include "ListWindow.h"
+#include "CartWindow.h"
 
 class ShoppingHandler {
 public:
@@ -12,5 +13,6 @@ private:
 	Window* window;
 	MenuWindow menuWindow;
 	ListWindow listWindow;
+	CartWindow cartWindow;
 };
 
