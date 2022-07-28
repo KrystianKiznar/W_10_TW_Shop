@@ -27,5 +27,6 @@ private:
 	ListWindow listWindow;
 	CartWindow cartWindow;
 	ListOptionsWindow listOptionsWindow;
+	Stock stock;
 };
 

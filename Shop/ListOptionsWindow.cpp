@@ -1,5 +1,13 @@
 #include "ListOptionsWindow.h"
 
+ListOptionsWindow::ListOptionsWindow() {
+	this->stockPtr = nullptr;
+}
+
+ListOptionsWindow::ListOptionsWindow(Stock* stockPtr) {
+	this->stockPtr = stockPtr;
+}
+
 int ListOptionsWindow::displayWindow() {
 
 	int usersChoice, nextState;
@@ -20,17 +28,34 @@ int ListOptionsWindow::displayWindow() {
 	// return next state
 	switch (usersChoice) {
 	case 1:
-		nextState = 1;
+		nextState = 3; //LIST
+		stockPtr->sortByNameAsc();
 		break;
 	case 2:
-		nextState = 2;
+		nextState = 3; //LIST
+		stockPtr->sortByNameAsc();
 		break;
 	case 3:
-		nextState = -1;
+		nextState = 3; //LIST
+		stockPtr->sortByNameAsc();
+		break;
+	case 4:
+		nextState = 3; //LIST
+		stockPtr->sortByNameAsc();
+		break;
+	case 5:
+		nextState = 3; //LIST
+		stockPtr->sortByNameAsc();
+		break;
+	case 6:
+		nextState = 1; //MENU
+		break;
+	case 7:
+		nextState = 0; //EXIT
 		break;
 	}
 
 	system("pause");
 
-	return 1;
+	return nextState;
 }

@@ -29,5 +29,5 @@ int MenuWindow::displayWindow() {
 
 	system("pause");
 
-	return 3;
+	return 2; // LIST OPTIONS
 }

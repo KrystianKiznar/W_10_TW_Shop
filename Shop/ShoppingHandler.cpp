@@ -1,12 +1,17 @@
 #include "ShoppingHandler.h"
 
-ShoppingHandler::ShoppingHandler() {}
+ShoppingHandler::ShoppingHandler() {
+	window = nullptr;
+	menuWindow = MenuWindow();
+	listWindow = ListWindow();
+	cartWindow = CartWindow();
+	listOptionsWindow = ListOptionsWindow(&stock);
+	stock = Stock();
+}
 
 void ShoppingHandler::start() {
 
-
-
-	state state = menu; //TODO: Replace with enum
+	state state = menu; 
 
 	while (state != exit) {
 
