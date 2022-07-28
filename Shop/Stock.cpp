@@ -2,24 +2,24 @@
 #include "Product.h"
 
 
-std::vector<Product> Stock::filterByCategory(std::vector<Product> stock, category cat)
+std::vector<Product *> Stock::filterByCategory(std::vector<Product> stock, category cat)
 {
-    std::vector<Product> output;
+    std::vector<Product*> output;
  
     for (int i=0; i < stock.size(); i++) {
         if (stock[i].category == cat)
-            output.push_back(stock[i]);
+            output[i] = &stock[i];
     }
     return output;
 }
 
-std::vector<Product> Stock::filterBySupplier(std::vector<Product> stock, supplier sup)
+std::vector<Product *> Stock::filterBySupplier(std::vector<Product> stock, supplier sup)
 {
-    std::vector<Product> output;
+    std::vector<Product*> output;
 
     for (int i = 0; i < stock.size(); i++) {
         if (stock[i].supplier == sup)
-            output.push_back(stock[i]);
+            output[i] = &stock[i];
     }
     return output;
 }
