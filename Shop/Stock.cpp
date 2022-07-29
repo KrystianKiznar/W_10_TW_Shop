@@ -28,6 +28,22 @@ void Stock::addToStock(Product& product) {
     stock.push_back(product);
     }
 
+category Stock::getFilterByCat() {
+	return filterByCat;
+}
+
+void Stock::setFilterBySupp(supplier supp) {
+	filterBySupp = supp;
+}
+
+supplier Stock::getFilterBySupp() {
+	return filterBySupp;
+}
+
+void Stock::setFilterByCat(category cat) {
+	filterByCat = cat;
+}
+
 void Stock::sortByNameAsc() {
 
 	std::vector<Product> newStock = stock;
@@ -82,22 +98,23 @@ void Stock::sort(std::vector<Product*>& arr, int l, int r, Comparator& comparato
 		sort(arr, j + 1, r, comparator);
 	}
 }
-std::vector<Product*> Stock::filterByCategory(std::vector<Product> stock, category cat) {
-	std::vector<Product*> output;
+
+std::vector<Product> Stock::filterByCategory(std::vector<Product> stock, category cat) {
+	std::vector<Product> output;
 
 	for (int i = 0; i < stock.size(); i++) {
 		if (stock[i].category == cat)
-			output[i] = &stock[i];
+			output.push_back(stock[i]);
 	}
 	return output;
 }
 
-std::vector<Product*> Stock::filterBySupplier(std::vector<Product> stock, supplier sup) {
-	std::vector<Product*> output;
+std::vector<Product> Stock::filterBySupplier(std::vector<Product> stock, supplier sup) {
+	std::vector<Product> output;
 
 	for (int i = 0; i < stock.size(); i++) {
 		if (stock[i].supplier == sup)
-			output[i] = &stock[i];
+			output.push_back(stock[i]);
 	}
 	return output;
 }

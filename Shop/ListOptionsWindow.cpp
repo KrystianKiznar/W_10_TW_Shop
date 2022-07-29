@@ -39,54 +39,71 @@ int ListOptionsWindow::displayWindow() {
 	switch (usersChoice) {
 	case 1:
 		nextState = 3; //LIST
+		stockPtr->setFilterByCat(category::catNone);
+		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 2:
 		nextState = 3; //LIST
 		stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(category::catNone);
+		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 3:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(category::catNone);
+		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 4:
 		nextState = 3; //LIST
 		stockPtr->sortByPriceAsc();
+		stockPtr->setFilterByCat(category::catNone);
+		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 5:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(category::catNone);
+		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 6:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(category::food);
 		break;
 	case 7:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(AGDRTV);
 		break;
 	case 8:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(booksandstats);
 		break;
 	case 9:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(cosmetics);
 		break;
 	case 10:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterByCat(clothes);
 		break;
 	case 11:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterBySupp(poland);
 		break;
 	case 12:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterBySupp(germany);
 		break;
 	case 13:
 		nextState = 3; //LIST
 		//stockPtr->sortByNameAsc();
+		stockPtr->setFilterBySupp(china);
 		break;
 	case 14:
 		nextState = 1; //MENU

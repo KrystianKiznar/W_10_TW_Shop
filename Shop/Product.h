@@ -6,13 +6,15 @@ enum category {
 	booksandstats,
 	food,
 	cosmetics,
-	clothes
+	clothes,
+	catNone
 };
 
 enum supplier {
 	poland,
 	china,
-	germany
+	germany,
+	none
 };
 
 class Product
