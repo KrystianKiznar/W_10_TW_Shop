@@ -2,15 +2,16 @@
 
 ShoppingHandler::ShoppingHandler() {
 	window = nullptr;
+	stock = Stock();
 	menuWindow = MenuWindow();
-	listWindow = ListWindow();
+	listWindow = ListWindow(&stock);
 	cartWindow = CartWindow();
 	listOptionsWindow = ListOptionsWindow(&stock);
-	stock = Stock();
 }
 
 void ShoppingHandler::start() {
 
+	stock.initialize();
 	state state = menu; 
 
 	while (state != exit) {
@@ -19,11 +20,11 @@ void ShoppingHandler::start() {
 		case menu:
 			window = &menuWindow;
 			break;
-		case list:
-			window = &listWindow;
-			break;
 		case listOptions:
 			window = &listOptionsWindow;
+			break;
+		case list:
+			window = &listWindow;
 			break;
 		case cart:
 			window = &cartWindow;

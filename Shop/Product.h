@@ -40,6 +40,6 @@ class CompareByName : public Comparator {
 
 class CompareByPrice : public Comparator {
 	virtual int compare(const Product* left, const Product* right) {
-		return left->price - right->price;
+		return (left->price - right->price) * 100.0;
 	}
 };
