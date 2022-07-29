@@ -3,6 +3,7 @@
 #include <utility>
 #include <iostream>
 #include <vector>
+#include "Product.h"
 
 std::vector<Product> Stock::getStock()
 {
@@ -21,11 +22,11 @@ std::vector<Product *> Stock::getStockPointers()
 	}
     return pointersVector;
 }
-
+ 
 
 void Stock::addToStock(Product& product) {
     stock.push_back(product);
-}
+    }
 
 void Stock::sortByNameAsc() {
 
@@ -40,7 +41,7 @@ void Stock::sortByNameAsc() {
 	// wektor wskaznikow -> wektor produktow
 	for (int i = 0; i < stockPointers.size(); i++) {
 		newStock[i] = *stockPointers[i];
-	}
+}
 
 	stock = newStock;
 }
@@ -57,34 +58,49 @@ void Stock::sortByPriceAsc() {
 	// wektor wskaznikow -> wektor produktow
 	for (int i = 0; i < stockPointers.size(); i++) {
 		newStock[i] = *stockPointers[i];
-	}
+    }
 
 	stock = newStock;
 }
 
-void Stock::sort (std::vector<Product *> &arr, int l, int r, Comparator & comparator)
-{
-     {
-    if (l < r) {
-        int pivot = l;
-        int i = l;
-        int j = r;
-        while (i < j) {
-            while (comparator.compare( arr[i], arr[pivot]) <= 0 && i < r)
-                i++;
-            while (comparator.compare( arr[j], arr[pivot]) > 0)
-                j--;
-            if (i < j) {
-                std::swap(arr[i], arr[j]);
-            }
-        }
-        std::swap(arr[pivot], arr[j]);
-        sort(arr, l, j - 1, comparator);
-        sort(arr, j + 1, r, comparator);
-    }
-};
+void Stock::sort(std::vector<Product*>& arr, int l, int r, Comparator& comparator) {
+	if (l < r) {
+		int pivot = l;
+		int i = l;
+		int j = r;
+		while (i < j) {
+			while (comparator.compare(arr[i], arr[pivot]) <= 0 && i < r)
+				i++;
+			while (comparator.compare(arr[j], arr[pivot]) > 0)
+				j--;
+			if (i < j) {
+				std::swap(arr[i], arr[j]);
+			}
+		}
+		std::swap(arr[pivot], arr[j]);
+		sort(arr, l, j - 1, comparator);
+		sort(arr, j + 1, r, comparator);
+	}
+}
+std::vector<Product*> Stock::filterByCategory(std::vector<Product> stock, category cat) {
+	std::vector<Product*> output;
+
+	for (int i = 0; i < stock.size(); i++) {
+		if (stock[i].category == cat)
+			output[i] = &stock[i];
+	}
+	return output;
 }
 
+std::vector<Product*> Stock::filterBySupplier(std::vector<Product> stock, supplier sup) {
+	std::vector<Product*> output;
+
+	for (int i = 0; i < stock.size(); i++) {
+		if (stock[i].supplier == sup)
+			output[i] = &stock[i];
+	}
+	return output;
+}
 
 void Stock::initialize() {
 	Product p1;

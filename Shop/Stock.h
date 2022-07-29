@@ -7,9 +7,10 @@ class Stock
 private:
 	std::vector<Product> stock;
 
+
 public:
-	std::vector<Product> filterByCategory(enum category);
-	std::vector<Product> filterBySupplier(enum supplier);
+	std::vector<Product*> filterByCategory(std::vector<Product> stock, category cat);
+	std::vector<Product*> filterBySupplier(std::vector<Product> stock, supplier sup);
 	void sortByNameAsc();
 	void sortByNameDesc();
 	void sortByPriceAsc();
