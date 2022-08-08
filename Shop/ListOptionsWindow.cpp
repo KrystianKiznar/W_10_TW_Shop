@@ -33,85 +33,63 @@ int ListOptionsWindow::displayWindow() {
 
 	// read user's choice
 	std::cout << std::endl;
-	usersChoice = takeUserInput(1, 15);;
+	usersChoice = takeUserInput(1, 15);
 
-	// return next state
 	switch (usersChoice) {
 	case 1:
 		nextState = 3; //LIST
-		stockPtr->setFilterByCat(category::catNone);
-		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 2:
 		nextState = 3; //LIST
 		stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(category::catNone);
-		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 3:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(category::catNone);
-		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 4:
 		nextState = 3; //LIST
 		stockPtr->sortByPriceAsc();
-		stockPtr->setFilterByCat(category::catNone);
-		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 5:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(category::catNone);
-		stockPtr->setFilterBySupp(supplier::none);
 		break;
 	case 6:
 		nextState = 3; //LIST
-		stockPtr->setFilterByCat(category::food);
+		stockPtr->filterByCategory(category::food);
 		break;
 	case 7:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(AGDRTV);
+		stockPtr->filterByCategory(AGDRTV);
 		break;
 	case 8:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(booksandstats);
+		stockPtr->filterByCategory(booksandstats);
 		break;
 	case 9:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(cosmetics);
+		stockPtr->filterByCategory(cosmetics);
 		break;
 	case 10:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterByCat(clothes);
+		stockPtr->filterByCategory(clothes);
 		break;
 	case 11:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterBySupp(poland);
+		stockPtr->filterBySupplier(poland);
 		break;
 	case 12:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterBySupp(germany);
+		stockPtr->filterBySupplier(germany);
 		break;
 	case 13:
 		nextState = 3; //LIST
-		//stockPtr->sortByNameAsc();
-		stockPtr->setFilterBySupp(china);
+		stockPtr->filterBySupplier(china);
 		break;
 	case 14:
 		nextState = 1; //MENU
-		//stockPtr->sortByNameAsc();
 		break;
 	case 15:
 		nextState = 0; //EXIT
-		//stockPtr->sortByNameAsc();
 		break;
 	}
 

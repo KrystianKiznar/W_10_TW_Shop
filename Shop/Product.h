@@ -26,7 +26,13 @@ public:
 	category category;
 	supplier supplier;
 
+	bool isHidden();
+	void setHidden(bool newValue);
+
 	void print();
+
+private:
+	bool hidden = false;
 };
 
 class Comparator {

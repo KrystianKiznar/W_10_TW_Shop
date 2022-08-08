@@ -28,22 +28,6 @@ void Stock::addToStock(Product& product) {
     stock.push_back(product);
     }
 
-category Stock::getFilterByCat() {
-	return filterByCat;
-}
-
-void Stock::setFilterBySupp(supplier supp) {
-	filterBySupp = supp;
-}
-
-supplier Stock::getFilterBySupp() {
-	return filterBySupp;
-}
-
-void Stock::setFilterByCat(category cat) {
-	filterByCat = cat;
-}
-
 void Stock::sortByNameAsc() {
 
 	std::vector<Product> newStock = stock;
@@ -57,7 +41,7 @@ void Stock::sortByNameAsc() {
 	// wektor wskaznikow -> wektor produktow
 	for (int i = 0; i < stockPointers.size(); i++) {
 		newStock[i] = *stockPointers[i];
-}
+	}
 
 	stock = newStock;
 }
@@ -99,24 +83,21 @@ void Stock::sort(std::vector<Product*>& arr, int l, int r, Comparator& comparato
 	}
 }
 
-std::vector<Product> Stock::filterByCategory(std::vector<Product> stock, category cat) {
-	std::vector<Product> output;
+void Stock::filterByCategory(category cat) {
 
 	for (int i = 0; i < stock.size(); i++) {
-		if (stock[i].category == cat)
-			output.push_back(stock[i]);
+		if (stock[i].category != cat) 
+			stock[i].setHidden(true);
 	}
-	return output;
+
 }
 
-std::vector<Product> Stock::filterBySupplier(std::vector<Product> stock, supplier sup) {
-	std::vector<Product> output;
+void Stock::filterBySupplier(supplier sup) {
 
 	for (int i = 0; i < stock.size(); i++) {
-		if (stock[i].supplier == sup)
-			output.push_back(stock[i]);
+		if (stock[i].supplier != sup)
+			stock[i].setHidden(true);
 	}
-	return output;
 }
 
 void Stock::initialize() {
@@ -280,5 +261,19 @@ void Stock::initialize() {
 	p20.supplier = china;
 	stock.push_back(p20);
 
-	//return stock;
+}
+
+void Stock::unhideAllProducts() {
+	for (int i = 0; i < stock.size(); i++) {
+		stock[i].setHidden(false);
+	}
+}
+
+void Stock::printStock() {
+	for (int i = 0; i < stock.size(); i++) {
+		if (!stock[i].isHidden()) {
+			stock[i].print();
+			std::cout << std::endl;
+		}
+	}
 }

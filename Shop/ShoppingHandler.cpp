@@ -30,7 +30,7 @@ void ShoppingHandler::start() {
 			window = &cartWindow;
 			break;
 		}
-
+		
 		state = static_cast<ShoppingHandler::state>(window->displayWindow());
 	}
 

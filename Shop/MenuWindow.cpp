@@ -10,7 +10,7 @@ int MenuWindow::displayWindow() {
 	std::cout << "1. List" << std::endl;
 	std::cout << "2. Cart" << std::endl;
 	std::cout << "3. Exit" << std::endl;
-	//std::cout << "3. Admin" << std::endl;
+	//std::cout << "4. Admin" << std::endl;
 
 	// read user's choice
 	std::cout << std::endl;

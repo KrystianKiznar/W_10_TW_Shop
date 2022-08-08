@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Window.h"
-//#include "ShoppingHandler.h"
 
 int Window::takeUserInput(int start, int end)
 {

@@ -38,3 +38,15 @@ void Product::print() {
 	//user experience: title, spaces, names of the category 
 
 }
+
+bool Product::isHidden() {
+	return hidden;
+}
+
+void Product::setHidden(bool newValue) {
+	hidden = newValue;
+}
+
+int Comparator::compare(const Product* left, const Product* right) {
+	return 0;
+}
