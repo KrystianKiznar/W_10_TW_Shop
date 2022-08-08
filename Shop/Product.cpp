@@ -33,7 +33,7 @@ std::string paddingPrice(int n, double price) {
 
 void Product::print() {
 	
-	std::cout << " " << paddingName(20, name) << "$" << paddingPrice(13, price) << category << "      ID: " << id << "     " << supplier;
+	std::cout << " " << paddingName(40, name) << "$" << paddingPrice(13, price) << category << "      ID: " << id << "     " << supplier;
 	//enums -> names of category/supplier, not enum number
 	//user experience: title, spaces, names of the category 
 

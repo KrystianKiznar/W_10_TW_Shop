@@ -4,6 +4,10 @@
 #include <iostream>
 #include <vector>
 #include "Product.h"
+#include <fstream>
+#include <string>
+#include <stdlib.h>
+
 
 std::vector<Product> Stock::getStock()
 {
@@ -25,8 +29,86 @@ std::vector<Product *> Stock::getStockPointers()
  
 
 void Stock::addToStock(Product& product) {
-    stock.push_back(product);
-    }
+    stock.push_back(product);//czy ta funkcja jest potrzebna przy odczytywaniu danych z pliku?
+}							 //dlaczego przekazujemy tu adres?
+
+void Stock::uploadProduct(std::string line) {
+	Product* newProduct = new Product;
+	newProduct->name = readName(line);
+	newProduct->id = readId(line);
+	newProduct->price = readPrice(line);
+	newProduct->category = setCat(line);	
+	newProduct->supplier = setSup(line);
+	
+	stock.push_back(*newProduct);
+}
+
+std::string Stock::readName(std::string &line)
+{
+	std::string name;
+	
+	do {
+		name += line[0];
+		line.erase(0, 1);
+	} while (line[0] != ',');
+
+	line.erase(0, 1);
+	return name;
+}
+
+int Stock::readId(std::string& line)
+{
+	std::string id;
+	do {
+		id += line[0];
+		line.erase(0, 1);
+	} while (line[0] != ','&& line.size() != 0);
+
+	line.erase(0, 1);
+	return stoi(id);
+}
+
+double Stock::readPrice(std::string& line)
+{
+	std::string price;
+	do {
+		price += line[0];
+		line.erase(0, 1);
+	} while (line[0] != ',');
+
+	line.erase(0, 1);
+	return  strtod(price.c_str(), NULL);
+}
+
+category Stock::setCat(std::string& line)
+{
+	int cat = readId(line);
+	switch (cat) {
+	case 0:
+		return AGDRTV;
+	case 1:
+		return booksandstats;
+	case 2:
+		return food;
+	case 3:
+		return cosmetics;
+	case 4:
+		return clothes;
+	}
+}
+
+supplier Stock::setSup(std::string& line)
+{
+	int cat = readId(line);
+	switch (cat) {
+	case 0:
+		return poland;
+	case 1:
+		return china;
+	case 2:
+		return germany;
+	}
+}
 
 void Stock::sortByNameAsc() {
 
@@ -261,6 +343,18 @@ void Stock::initialize() {
 	p20.supplier = china;
 	stock.push_back(p20);
 
+	std::fstream path;
+	path.open("database.csv");
+	std::string line = "";
+	
+	while (true) {
+		std::getline(path, line);
+		if (line != "")
+			uploadProduct(line);
+		else
+			break;
+	}
+	path.close();
 }
 
 void Stock::unhideAllProducts() {
