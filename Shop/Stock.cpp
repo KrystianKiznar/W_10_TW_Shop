@@ -33,14 +33,14 @@ void Stock::addToStock(Product& product) {
 }							 //dlaczego przekazujemy tu adres?
 
 void Stock::uploadProduct(std::string line) {
-	Product* newProduct = new Product;
-	newProduct->name = readName(line);
-	newProduct->id = readId(line);
-	newProduct->price = readPrice(line);
-	newProduct->category = setCat(line);	
-	newProduct->supplier = setSup(line);
+	Product newProduct;
+	newProduct.name = readName(line);
+	newProduct.id = readId(line);
+	newProduct.price = readPrice(line);
+	newProduct.category = setCat(line);	
+	newProduct.supplier = setSup(line);
 	
-	stock.push_back(*newProduct);
+	stock.push_back(newProduct);
 }
 
 std::string Stock::readName(std::string &line)
