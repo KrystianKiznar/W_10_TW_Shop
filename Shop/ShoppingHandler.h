@@ -5,18 +5,8 @@
 #include "CartWindow.h"
 #include "ListOptionsWindow.h"
 
-class Window;
-
 class ShoppingHandler {
 public:
-	enum state {
-		exit,
-		menu,
-		listOptions,
-		list,
-		cart,
-		other
-	};
 
 	ShoppingHandler();
 	void start();

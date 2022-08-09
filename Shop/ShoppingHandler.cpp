@@ -12,26 +12,26 @@ ShoppingHandler::ShoppingHandler() {
 void ShoppingHandler::start() {
 
 	stock.initialize();
-	state state = menu; 
+	state currentState= state::menu; 
 
-	while (state != exit) {
+	while (currentState!= state::exit) {
 
-		switch (state) {
-		case menu:
+		switch (currentState) {
+		case state::menu:
 			window = &menuWindow;
 			break;
-		case listOptions:
+		case state::listOptions:
 			window = &listOptionsWindow;
 			break;
-		case list:
+		case state::list:
 			window = &listWindow;
 			break;
-		case cart:
+		case state::cart:
 			window = &cartWindow;
 			break;
 		}
 		
-		state = static_cast<ShoppingHandler::state>(window->displayWindow());
+		currentState= static_cast<state>(window->displayWindow());
 	}
 
 }

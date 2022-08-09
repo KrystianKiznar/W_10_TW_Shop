@@ -5,7 +5,7 @@ class CartWindow :
     public Window {
 public:
     // Inherited via Window
-    virtual int displayWindow() override;
+    virtual state displayWindow() override;
 
 private:
 

@@ -1,4 +1,5 @@
 #include "ListWindow.h"
+//#include "ShoppingHandler.h"
 
 ListWindow::ListWindow() {
 	this->stockPtr = nullptr;
@@ -8,7 +9,7 @@ ListWindow::ListWindow(Stock* stockPtr) {
 	this->stockPtr = stockPtr;
 }
 
-int ListWindow::displayWindow() {
+state ListWindow::displayWindow() {
 
 	system("cls");
 	std::cout << "LIST OF PRODUCTS" << std::endl << std::endl;
@@ -20,5 +21,5 @@ int ListWindow::displayWindow() {
 
 	system("pause");
 
-	return 0;
+	return state::menu;
 }

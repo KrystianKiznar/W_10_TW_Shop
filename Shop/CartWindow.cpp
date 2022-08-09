@@ -1,10 +1,11 @@
 #include "CartWindow.h"
+//#include "ShoppingHandler.h"
 
-int CartWindow::displayWindow() {
+state CartWindow::displayWindow() {
 
 	std::cout << "CART" << std::endl << std::endl;
 
 	system("pause");
 
-	return 0;
+	return state::menu;
 }

@@ -1,9 +1,11 @@
 #include "MenuWindow.h"
+//#include "ShoppingHandler.h"
 
-int MenuWindow::displayWindow() {
+state MenuWindow::displayWindow() {
 
 	system("cls");
-	int usersChoice, nextState;
+	int usersChoice;
+	state nextState;
 
 	// print list of choices 
 	std::cout << "MENU" << std::endl << std::endl;
@@ -19,13 +21,13 @@ int MenuWindow::displayWindow() {
 	// return next state
 	switch (usersChoice) {
 	case 1:
-		nextState = 2;
+		nextState = state::listOptions;
 		break;
 	case 2:
-		nextState = 4;
+		nextState = state::cart;
 		break;
 	case 3:
-		nextState = 0;
+		nextState = state::exit;
 		break;
 	}
 

@@ -8,7 +8,7 @@ public:
     ListWindow();
     ListWindow(Stock* stockPtr);
     // Inherited via Window
-    virtual int displayWindow() override;
+    virtual state displayWindow() override;
 
 private:
     Stock* stockPtr;

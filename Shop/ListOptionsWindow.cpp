@@ -1,4 +1,5 @@
 #include "ListOptionsWindow.h"
+//#include "ShoppingHandler.h"
 
 ListOptionsWindow::ListOptionsWindow() {
 	this->stockPtr = nullptr;
@@ -8,10 +9,11 @@ ListOptionsWindow::ListOptionsWindow(Stock* stockPtr) {
 	this->stockPtr = stockPtr;
 }
 
-int ListOptionsWindow::displayWindow() {
+state ListOptionsWindow::displayWindow() {
 
 	system("cls");
-	int usersChoice, nextState;
+	int usersChoice; 
+	state nextState;
 
 	// print list of choices 
 	std::cout << "OPTIONS" << std::endl << std::endl;
@@ -37,59 +39,59 @@ int ListOptionsWindow::displayWindow() {
 
 	switch (usersChoice) {
 	case 1:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		break;
 	case 2:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->sortByNameAsc();
 		break;
 	case 3:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		break;
 	case 4:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->sortByPriceAsc();
 		break;
 	case 5:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		break;
 	case 6:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterByCategory(category::food);
 		break;
 	case 7:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterByCategory(AGDRTV);
 		break;
 	case 8:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterByCategory(booksandstats);
 		break;
 	case 9:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterByCategory(cosmetics);
 		break;
 	case 10:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterByCategory(clothes);
 		break;
 	case 11:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterBySupplier(poland);
 		break;
 	case 12:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterBySupplier(germany);
 		break;
 	case 13:
-		nextState = 3; //LIST
+		nextState = state::list; //LIST
 		stockPtr->filterBySupplier(china);
 		break;
 	case 14:
-		nextState = 1; //MENU
+		nextState = state::menu; //MENU
 		break;
 	case 15:
-		nextState = 0; //EXIT
+		nextState = state::exit; //EXIT
 		break;
 	}
 
