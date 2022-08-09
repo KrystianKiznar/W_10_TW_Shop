@@ -7,6 +7,8 @@ ShoppingHandler::ShoppingHandler() {
 	listWindow = ListWindow(&stock);
 	cartWindow = CartWindow();
 	listOptionsWindow = ListOptionsWindow(&stock);
+	sortByWindow = SortByWindow(&stock);
+	filterByWindow = FilterByWindow(&stock);
 }
 
 void ShoppingHandler::start() {
@@ -29,6 +31,13 @@ void ShoppingHandler::start() {
 		case state::cart:
 			window = &cartWindow;
 			break;
+		case state::filter:
+			window = &filterByWindow;
+			break;
+		case state::sort:
+			window = &sortByWindow;
+			break;
+
 		}
 		
 		currentState= static_cast<state>(window->displayWindow());

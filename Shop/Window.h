@@ -9,6 +9,8 @@ enum class state {
 	listOptions,
 	list,
 	cart,
+	sort,
+	filter,
 	other
 };
 
