@@ -26,6 +26,18 @@ std::vector<Product *> Stock::getStockPointers()
 	}
     return pointersVector;
 }
+
+Product* Stock::getProductById(int id) {
+
+	std::vector<Product*> pointersVector = getStockPointers();
+
+	for (int i = 0; i < pointersVector.size(); i++) {
+		if (pointersVector[i]->id == id) {
+			return pointersVector[i];
+		}
+	}
+	return nullptr;
+}
  
 
 void Stock::addToStock(Product& product) {

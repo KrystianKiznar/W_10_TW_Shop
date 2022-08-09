@@ -25,6 +25,7 @@ public:
 	std::vector<Product> getStock();
 	void setStock(std::vector<Product> stock);
 	std::vector<Product *> getStockPointers();
+	Product* getProductById(int id);
 
 private:
 	std::vector<Product> stock;
