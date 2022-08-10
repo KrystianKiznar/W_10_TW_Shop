@@ -15,7 +15,7 @@ state ListWindow::displayWindow() {
 	std::cout << "LIST OF PRODUCTS" << std::endl << std::endl;
 
 	//std::cout << "\n                SORTED BY: Name A-Z\n\n" << std::endl;
-	std::cout << " PRODUCT NAME  " << "      PRICE    " << "  CATEGORY" << "           SUPPLIER\n" << std::endl;
+	std::cout << "       PRODUCT NAME  " << "                     PRICE    " << "       CATEGORY" << "            ID   "<< "   SUPPLIER\n" << std::endl;
 
 	stockPtr->printStock();
 
