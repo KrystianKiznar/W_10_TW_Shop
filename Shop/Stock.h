@@ -19,8 +19,8 @@ public:
 	std::string readName(std::string &line);
 	int readId(std::string& line);
 	double readPrice(std::string& line);
-	category setCat(std::string& line);
-	supplier setSup(std::string& line);
+	categoryEnum setCat(std::string& line);
+	supplierEnum setSup(std::string& line);
 
 	std::vector<Product> getStock();
 	void setStock(std::vector<Product> stock);

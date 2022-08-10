@@ -80,33 +80,33 @@ double Stock::readPrice(std::string& line)
 	return  strtod(price.c_str(), NULL);
 }
 
-category Stock::setCat(std::string& line)
+categoryEnum Stock::setCat(std::string& line)
 {
 	int cat = readId(line);
 	switch (cat) {
 	case 0:
-		return AGDRTV;
+		return categoryEnum::AGDRTV;
 	case 1:
-		return booksandstats;
+		return categoryEnum::booksandstats;
 	case 2:
-		return food;
+		return categoryEnum::food;
 	case 3:
-		return cosmetics;
+		return categoryEnum::cosmetics;
 	case 4:
-		return clothes;
+		return categoryEnum::clothes;
 	}
 }
 
-supplier Stock::setSup(std::string& line)
+supplierEnum Stock::setSup(std::string& line)
 {
 	int cat = readId(line);
 	switch (cat) {
 	case 0:
-		return poland;
+		return supplierEnum::poland;
 	case 1:
-		return china;
+		return supplierEnum::china;
 	case 2:
-		return germany;
+		return supplierEnum::germany;
 	}
 }
 

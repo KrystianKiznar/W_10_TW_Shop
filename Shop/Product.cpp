@@ -52,7 +52,7 @@ void Product::showSupplier(supplierEnum sup) {
 }
 void Product::print() {
 	
-	std::cout << " " << paddingName(20, name) << "$" << paddingPrice(13, price);
+	std::cout << " " << paddingName(40, name) << "$" << paddingPrice(13, price);
 	showCategory(category);
 	std::cout << "      ID: " << id << "     ";
 	showSupplier(supplier);

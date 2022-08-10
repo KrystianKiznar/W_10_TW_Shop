@@ -36,35 +36,35 @@ state FilterByWindow::displayWindow()
 	switch (usersChoice) {
 	case 1:
 		nextState = state::list; //LIST
-		stockPtr->filterByCategory(category::food);
+		stockPtr->filterByCategory(categoryEnum::food);
 		break;
 	case 2:
 		nextState = state::list; //LIST
-		stockPtr->filterByCategory(AGDRTV);
+		stockPtr->filterByCategory(categoryEnum::AGDRTV);
 		break;
 	case 3:
 		nextState = state::list; //LIST
-		stockPtr->filterByCategory(booksandstats);
+		stockPtr->filterByCategory(categoryEnum::booksandstats);
 		break;
 	case 4:
 		nextState = state::list; //LIST
-		stockPtr->filterByCategory(cosmetics);
+		stockPtr->filterByCategory(categoryEnum::cosmetics);
 		break;
 	case 5:
 		nextState = state::list; //LIST
-		stockPtr->filterByCategory(clothes);
+		stockPtr->filterByCategory(categoryEnum::clothes);
 		break;
 	case 6:
 		nextState = state::list; //LIST
-		stockPtr->filterBySupplier(poland);
+		stockPtr->filterBySupplier(supplierEnum::poland);
 		break;
 	case 7:
 		nextState = state::list; //LIST
-		stockPtr->filterBySupplier(germany);
+		stockPtr->filterBySupplier(supplierEnum::germany);
 		break;
 	case 8:
 		nextState = state::list; //LIST
-		stockPtr->filterBySupplier(china);
+		stockPtr->filterBySupplier(supplierEnum::china);
 		break;
 	case 9:
 		nextState = state::menu; //MENU
