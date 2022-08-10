@@ -401,3 +401,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /Output-Build.txt
+/ClassDiagram.cd
+/database.csv

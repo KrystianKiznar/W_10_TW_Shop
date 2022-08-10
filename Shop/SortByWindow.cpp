@@ -43,6 +43,7 @@ state SortByWindow::displayWindow()
 		break;
 	case 3:
 		nextState = state::list; //LIST
+		stockPtr->sortByNameDesc();
 		break;
 	case 4:
 		nextState = state::list; //LIST
@@ -50,6 +51,7 @@ state SortByWindow::displayWindow()
 		break;
 	case 5:
 		nextState = state::list; //LIST
+		stockPtr->sortByPriceDesc();
 		break;
 	
 	case 6:
