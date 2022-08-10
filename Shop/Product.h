@@ -1,7 +1,7 @@
 #pragma once
 #include<string>
 
-enum category {
+enum class categoryEnum {
 	AGDRTV,
 	booksandstats,
 	food,
@@ -10,7 +10,7 @@ enum category {
 	catNone
 };
 
-enum supplier {
+enum class supplierEnum {
 	poland,
 	china,
 	germany,
@@ -23,12 +23,13 @@ public:
 	double price = 0;
 	int id = 0;
 	std::string name;
-	category category;
-	supplier supplier;
+	categoryEnum category;
+	supplierEnum supplier;
 
 	bool isHidden();
 	void setHidden(bool newValue);
-
+	void showCategory(categoryEnum cat);
+	void showSupplier(supplierEnum sup);
 	void print();
 
 private:

@@ -5,11 +5,12 @@
 class Stock
 {
 public:
-	void filterByCategory(category cat);
-	void filterBySupplier(supplier sup);
+	void filterByCategory(categoryEnum cat);
+	void filterBySupplier(supplierEnum sup);
 	void sortByNameAsc();
 	void sortByNameDesc();
 	void sortByPriceAsc();
+	void sortByPriceDesc();
 	void initialize();
 	void unhideAllProducts();
 	void printStock();
@@ -28,6 +29,6 @@ public:
 private:
 	std::vector<Product> stock;
 	void sort(std::vector<Product *>& arr, int l, int r, Comparator & comparator);
-	void reverseOrder();
+	
 };
 

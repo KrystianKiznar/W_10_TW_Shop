@@ -31,11 +31,31 @@ std::string paddingPrice(int n, double price) {
 	return newPrice + indent;
 }
 
+void Product::showCategory(categoryEnum cat) {
+	switch (cat) {
+	case categoryEnum::AGDRTV: std::cout << "AGD & RTV"; break;
+	case categoryEnum::booksandstats: std::cout << "books & stationery"; break;
+	case categoryEnum::food: std::cout << "food"; break;
+	case categoryEnum::cosmetics: std::cout << "cosmetics & drugs"; break;
+	case categoryEnum::clothes: std::cout << "clothes"; break;
+		//default: std::cout << int(cat); break;
+	}
+}
+
+void Product::showSupplier(supplierEnum sup) {
+	switch (sup) {
+	case supplierEnum::poland: std::cout << "Poland"; break;
+	case supplierEnum::china: std::cout << "China"; break;
+	case supplierEnum::germany: std::cout << "Germany"; break;
+		//default: std::cout << int(sup); break;
+	}
+}
 void Product::print() {
 	
-	std::cout << " " << paddingName(40, name) << "$" << paddingPrice(13, price) << category << "      ID: " << id << "     " << supplier;
-	//enums -> names of category/supplier, not enum number
-	//user experience: title, spaces, names of the category 
+	std::cout << " " << paddingName(20, name) << "$" << paddingPrice(13, price);
+	showCategory(category);
+	std::cout << "      ID: " << id << "     ";
+	showSupplier(supplier);
 
 }
 

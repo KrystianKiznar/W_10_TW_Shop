@@ -1,5 +1,4 @@
 #include "ListOptionsWindow.h"
-//#include "ShoppingHandler.h"
 
 ListOptionsWindow::ListOptionsWindow() {
 	this->stockPtr = nullptr;
