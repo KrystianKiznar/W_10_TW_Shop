@@ -1,4 +1,5 @@
 #include "Cart.h"
+#include <iostream>
 
 
 
@@ -33,4 +34,11 @@ int Cart::sum() {
 		total += (it->first->price)*(it->second);
 	}
 	return total;
+}
+
+void Cart::displeyMyCart() {
+	std::cout << "       PRODUCT NAME  " << "                     PRICE    " << "       CATEGORY" << "            ID   " << "   SUPPLIER      AMOUNT\n" << std::endl;
+	for (auto it = myCart.begin(); it != myCart.end(); it++) {
+		it->first->print(); std::cout <<"          " << it->second << std::endl;
+	}
 }

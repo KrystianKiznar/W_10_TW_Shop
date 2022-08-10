@@ -12,6 +12,7 @@ public:
 	void incrementAmount(int idProduct, Stock* stockPtr);
 	void dectrementAmount(int idProduct, Stock* stockPtr);
 	int sum();
+	void displeyMyCart();
 };
 
 

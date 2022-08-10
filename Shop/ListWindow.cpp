@@ -62,7 +62,7 @@ void ListWindow::addToCart() {
 	while (!isIdCorrect) {
 		std::cout << std::endl << std::endl;
 		std::cout << "Select id of the product:\t>>";
-		id = takeUserInput(1,10000); //TODO: find max id
+		id = takeUserInput(1,10000); //TODO: find max id ->max id is 999
 		if (true) { //TODO: validate given id (whether it is in database etc.) (maybe by using Krystian's getProductById() function)
 			isIdCorrect = true;
 		} else {
