@@ -4,7 +4,7 @@ ShoppingHandler::ShoppingHandler() {
 	window = nullptr;
 	stock = Stock();
 	menuWindow = MenuWindow();
-	listWindow = ListWindow(&stock);
+	listWindow = ListWindow(&stock, &cart);
 	cartWindow = CartWindow();
 	listOptionsWindow = ListOptionsWindow(&stock);
 	sortByWindow = SortByWindow(&stock);

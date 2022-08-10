@@ -6,6 +6,7 @@
 #include "ListOptionsWindow.h"
 #include "SortByWindow.h"
 #include "FilterByWindow.h"
+#include "Cart.h"
 
 class ShoppingHandler {
 public:
@@ -22,6 +23,7 @@ private:
 	SortByWindow sortByWindow;
 	FilterByWindow filterByWindow;
 	Stock stock;
+	Cart cart;
 	
 };
 

@@ -4,8 +4,9 @@ ListWindow::ListWindow() {
 	this->stockPtr = nullptr;
 }
 
-ListWindow::ListWindow(Stock* stockPtr) {
+ListWindow::ListWindow(Stock* stockPtr, Cart* cartPtr) {
 	this->stockPtr = stockPtr;
+	this->cartPtr = cartPtr;
 }
 
 state ListWindow::displayWindow() {
@@ -79,8 +80,10 @@ void ListWindow::addToCart() {
 		} 
 	}
 
-	std::cout <<std::endl << "Item has been added";
-	//TODO: wait
+	cartPtr->addProduct(id, quantity, stockPtr);
+
+	std::cout <<std::endl << "Item has been added" <<std::endl;
+	//std::sleep(4000);
 	//TODO: add product to the actual Cart object (Krystian's functions)
 
 }
