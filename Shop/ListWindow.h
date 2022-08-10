@@ -12,5 +12,7 @@ public:
 
 private:
     Stock* stockPtr;
+
+    void addToCart();
 };
 
