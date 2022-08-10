@@ -9,6 +9,7 @@ ShoppingHandler::ShoppingHandler() {
 	listOptionsWindow = ListOptionsWindow(&stock);
 	sortByWindow = SortByWindow(&stock);
 	filterByWindow = FilterByWindow(&stock);
+	userDataWindow =UserDataWindow();
 }
 
 void ShoppingHandler::start() {
@@ -36,6 +37,9 @@ void ShoppingHandler::start() {
 			break;
 		case state::sort:
 			window = &sortByWindow;
+			break;
+		case state::userDataWindow:
+			window = &userDataWindow;
 			break;
 
 		}

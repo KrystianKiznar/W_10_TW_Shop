@@ -11,6 +11,8 @@ enum class state {
 	cart,
 	sort,
 	filter,
+	userDataWindow,
+	payment,
 	other
 };
 
