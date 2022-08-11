@@ -3,6 +3,7 @@
 
 CartWindow::CartWindow() {
 	this->stockPtr = nullptr;
+	this->cartPtr = nullptr;
 }
 
 CartWindow::CartWindow(Stock* stockPtr, Cart* cartPtr) {
@@ -70,7 +71,7 @@ state CartWindow::displayWindow() {
 		cartChanges(usersChoice);
 		break;
 	case 4:
-		nextState = state::menu;
+		nextState = state::payment;
 		break;
 	case 5:
 		nextState = state::menu;
