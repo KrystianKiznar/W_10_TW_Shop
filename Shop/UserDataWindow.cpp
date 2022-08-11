@@ -26,10 +26,13 @@ state UserDataWindow::displayWindow()
 	std::regex houseflatReg("[A-Z]{0,10}[a-z]{0,10}\\d{1,10}");
 	std::regex codeReg("\\d{2}([-]|\\s*)?(\\d{3})?$");
 
+	do{
+		std::cout << "FIRST NAME: ";
+		UserDataWindow::validation(nameReg, firstName);
+		std::cout << "\n";
+	} while (validation(nameReg, firstName)==false);
+	
 
-	std::cout << "FIRST NAME: ";
-	UserDataWindow::validation(nameReg, firstName);
-	std::cout << "\n";
 	std::cout << "LAST NAME: ";
 	UserDataWindow::validation(nameReg, lastName);
 	std::cout << "\n";
