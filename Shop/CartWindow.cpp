@@ -48,8 +48,9 @@ state CartWindow::displayWindow() {
 	std::cout << "1. Increment amount of chosen product" << std::endl;
 	std::cout << "2. Decrement amount of chosen product" << std::endl;
 	std::cout << "3. Remove product from the cart" << std::endl;
-	std::cout << "4. Menu" << std::endl;
-	std::cout << "5. Exit" << std::endl;
+	std::cout << "4. Go to payment" << std::endl;
+	std::cout << "5. Menu" << std::endl;
+	std::cout << "6. Exit" << std::endl;
 
 	// read user's choice
 	int usersChoice = takeUserInput(1, 5);
@@ -72,6 +73,9 @@ state CartWindow::displayWindow() {
 		nextState = state::menu;
 		break;
 	case 5:
+		nextState = state::menu;
+		break;
+	case 6:
 		nextState = state::exit;
 		break;
 	}
