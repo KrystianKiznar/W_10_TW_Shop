@@ -28,8 +28,8 @@ void Cart::dectrementAmount(int idProduct, Stock* stockPtr) {
 	myCart.at(myProduct)--;
 }
 
-int Cart::sum() {
-	int total = 0;
+double Cart::sum() {
+	double total = 0;
 	for (auto it = myCart.begin(); it != myCart.end(); it++) {
 		total += (it->first->price)*(it->second);
 	}

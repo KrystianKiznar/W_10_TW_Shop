@@ -11,7 +11,7 @@ public:
 	void removeProduct(int idProduct, Stock* stockPtr);
 	void incrementAmount(int idProduct, Stock* stockPtr);
 	void dectrementAmount(int idProduct, Stock* stockPtr);
-	int sum();
+	double sum();
 	void displeyMyCart();
 };
 

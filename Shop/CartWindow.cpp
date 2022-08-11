@@ -15,7 +15,10 @@ state CartWindow::displayWindow() {
 	system("cls");
 	std::cout << "YOUR CART\n" << std::endl << std::endl;
 	cartPtr->displeyMyCart();
-	
+	double total = cartPtr->sum();
+
+	std::cout << "\nTOTAL:       " << total <<"$" << std::endl;
+
 	// print list of choices 
 	std::cout << "\nOPTIONS" << std::endl << std::endl;
 	std::cout << "1. Increment amount of chosen product" << std::endl;
