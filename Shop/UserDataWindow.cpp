@@ -5,8 +5,9 @@ UserDataWindow::UserDataWindow()
 {
 }
 
-bool UserDataWindow::validation(std::regex x,std::string y)
-{   getline(std::cin, y);
+bool UserDataWindow::validation(std::regex x, std::string y)
+{
+	getline(std::cin, y);
 
 	if (std::regex_match(y, x))
 		return true;
@@ -26,39 +27,124 @@ state UserDataWindow::displayWindow()
 	std::regex houseflatReg("[A-Z]{0,10}[a-z]{0,10}\\d{1,10}");
 	std::regex codeReg("\\d{2}([-]|\\s*)?(\\d{3})?$");
 
-	do{
-		std::cout << "FIRST NAME: ";
-		UserDataWindow::validation(nameReg, firstName);
+	bool isValid = false;
+	int n = 0;
+
+	while (isValid== UserDataWindow::validation(nameReg, firstName)){
 		std::cout << "\n";
-	} while (validation(nameReg, firstName)==false);
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "FIRST NAME: ";
+			} else {
+				std::cout << "FIRST NAME: ";
+			}
+		n++;
+	} 
+	n = 0;
+	while (isValid ==UserDataWindow::validation(nameReg, lastName)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "LAST NAME: ";
+		}
+		else {
+			std::cout << "LAST NAME: ";
+		}
+		n++;
+	}
+
+	n = 0;
+	while (isValid == UserDataWindow::validation(phoneReg, phoneNum)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "PHONE NUMBER: ";
+		}
+		else {
+			std::cout << "PHONE NUMBER: ";
+		}
+		n++;
+	}
+
+	n = 0;
+	while (isValid == UserDataWindow::validation(emailReg, email)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "EMAIL ADRESS: ";
+		}
+		else {
+			std::cout << "EMAIL ADRESS: ";
+		}
+		n++;
+	}
+
+	n = 0;
+	while (isValid == UserDataWindow::validation(nameReg, street)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "STREET: ";
+		}
+		else {
+			std::cout << "STREET: ";
+		}
+		n++;
+	}
+
+	n = 0;
+	while (isValid == UserDataWindow::validation(nameReg, street)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "HOUSE: ";
+		}
+		else {
+			std::cout << "HOUSE: ";
+		}
+		n++;
+	}
 	
+	n = 0;
+	while (isValid == UserDataWindow::validation(houseflatReg, house)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "FLAT: ";
+		}
+		else {
+			std::cout << "FLAT: ";
+		}
+		n++;
+	}
 
-	std::cout << "LAST NAME: ";
-	UserDataWindow::validation(nameReg, lastName);
-	std::cout << "\n";
-	std::cout << "PHONE NUMBER: ";
-	UserDataWindow::validation(phoneReg, phoneNum);
-	std::cout << "\n";
-	std::cout << "EMAIL ADRESS: ";
-	UserDataWindow::validation(emailReg, email);
-	std::cout << "\n";
-	std::cout << "STREET: ";
-	UserDataWindow::validation(nameReg, street);
-	std::cout << "\n";
-	std::cout << "HOUSE: ";
-	UserDataWindow::validation(houseflatReg, house);
-	std::cout << "\n";
-	std::cout << "FLAT: ";
-	UserDataWindow::validation(houseflatReg, flat);
-	std::cout << "\n";
-	std::cout << "ZIP CODE: ";
-	UserDataWindow::validation(codeReg, zipCode);
-	std::cout << "\n";
-	std::cout << "CITY: ";
-	UserDataWindow::validation(nameReg, city);
-	std::cout << "\n";
-	std::cout << "\n";
+	n = 0;
+	while (isValid == UserDataWindow::validation(codeReg, zipCode)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "ZIP CODE: ";
+		}
+		else {
+			std::cout << "ZIP CODE: ";
+		}
+		n++;
+	}
 
+	n = 0;
+	while (isValid == UserDataWindow::validation(nameReg, city)) {
+		std::cout << "\n";
+		if (n > 0) {
+			std::cout << "Your details are not correct\n";
+			std::cout << "CITY: ";
+		}
+		else {
+			std::cout << "CITY: ";;
+		}
+		n++;
+	}
+
+	std::cout << "\n";
 
 		// print list of choices 
 		std::cout << "OPTIONS" << std::endl << std::endl;
