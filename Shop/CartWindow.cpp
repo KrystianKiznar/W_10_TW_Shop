@@ -10,6 +10,30 @@ CartWindow::CartWindow(Stock* stockPtr, Cart* cartPtr) {
 	this->cartPtr = cartPtr;
 }
 
+void CartWindow::cartChanges(int choice) {
+	bool isIdCorrect = false;
+	int id{};
+	while (!isIdCorrect) {
+		std::cout << std::endl << std::endl;
+		std::cout << "Select id of the product:\t>>";
+		id = takeUserInput(1, 10000); //TODO: find max id ->max id is 999
+		if (true) { //TODO: validate given id (whether it is in database etc.) (maybe by using Krystian's getProductById() function)
+			isIdCorrect = true;
+		}
+		else {
+			std::cout << "Make sure you enter correct id:"; //TODO: make that message consistent with messages returned by takeUserInput() function
+		}
+	}
+	if (choice == 1)
+		cartPtr->incrementAmount(id, stockPtr);
+	else if (choice == 2)
+		cartPtr->dectrementAmount(id, stockPtr);
+	else if (choice == 3)
+		cartPtr->removeProduct(id, stockPtr);
+	else
+		std::cout << "ERROR! Try again!";
+}
+
 state CartWindow::displayWindow() {
 
 	system("cls");
@@ -34,16 +58,15 @@ state CartWindow::displayWindow() {
 	switch (usersChoice) {
 	case 1:
 		nextState = state::cart;
-		//int id = takeUserInput(100, 999);
-		//cartPtr->incrementAmount(id, stockPtr);
+		cartChanges(usersChoice);
 		break;
 	case 2:
 		nextState = state::cart;
-
+		cartChanges(usersChoice);
 		break;
 	case 3:
 		nextState = state::cart;
-
+		cartChanges(usersChoice);
 		break;
 	case 4:
 		nextState = state::menu;

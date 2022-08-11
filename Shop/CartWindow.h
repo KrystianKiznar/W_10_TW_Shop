@@ -8,6 +8,7 @@ class CartWindow :
 public:
     CartWindow();
     CartWindow(Stock* stockPtr, Cart* cartPtr);
+    void cartChanges(int choice);
     // Inherited via Window
     virtual state displayWindow() override;
 
