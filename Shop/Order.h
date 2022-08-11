@@ -10,6 +10,6 @@ class Order
 public:
 	void saveOrder();
 	Order loadOrder(std::string path);
-	Order(Cart cart);
+	Order(User us, Cart cart);
 };
 

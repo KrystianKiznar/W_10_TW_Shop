@@ -26,6 +26,8 @@ void Cart::dectrementAmount(int idProduct, Stock* stockPtr) {
 	Product* myProduct = stockPtr->getProductById(idProduct);
 
 	myCart.at(myProduct)--;
+	if (myCart.at(myProduct) == 0)
+		myCart.erase(myProduct);
 }
 
 double Cart::sum() {
@@ -41,4 +43,9 @@ void Cart::displeyMyCart() {
 	for (auto it = myCart.begin(); it != myCart.end(); it++) {
 		it->first->print(); std::cout <<"          " << it->second << std::endl;
 	}
+}
+
+std::map<Product*, int> Cart::getCart()
+{
+	return myCart;
 }

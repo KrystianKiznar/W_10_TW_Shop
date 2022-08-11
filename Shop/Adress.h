@@ -14,5 +14,12 @@ public:
 	void setStreet(std::string street);
 	void setHouse(std::string house);
 	void setFlat(std::string flat);
+	std::string getCity();
+	std::string getZipCode();
+	std::string getStreet();
+	std::string getHouse();
+	std::string getFlat();
+	Adress();
+	Adress(std::string city, std::string zipCode, std::string street, std::string house, std::string flat);
 };
 

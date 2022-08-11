@@ -13,6 +13,7 @@ public:
 	void dectrementAmount(int idProduct, Stock* stockPtr);
 	double sum();
 	void displeyMyCart();
+	std::map<Product*, int> getCart();
 };
 
 

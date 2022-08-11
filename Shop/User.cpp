@@ -36,3 +36,21 @@ std::string User::getPhoneNum()
 {
 	return phoneNum;
 }
+
+Adress User::getShippingAdress()
+{
+	return shippingAdress;
+}
+
+Adress User::getBillingAdress()
+{
+	return billingAdress;
+}
+
+void User::setShippingAdress(Adress adress) {
+	shippingAdress = adress;
+}
+
+void User::setBillingAdress(Adress adress) {
+	billingAdress = adress;
+}

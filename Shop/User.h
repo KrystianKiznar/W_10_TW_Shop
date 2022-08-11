@@ -14,10 +14,14 @@ public:
 	void setLastname(std::string lastname);
 	void setEmail(std::string email);
 	void setPhoneNumber(std::string phoneNumber);
+	void setShippingAdress(Adress adress);
+	void setBillingAdress(Adress adress);
+
 	std::string getFirstName();
 	std::string getLastName();
 	std::string getEmail();
 	std::string getPhoneNum();
-	//void setShippingAdress(Adress adress);
+	Adress getShippingAdress();
+	Adress getBillingAdress();
 };
 

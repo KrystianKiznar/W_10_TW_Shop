@@ -19,3 +19,32 @@ void Adress::setHouse(std::string house) {
 void Adress::setFlat(std::string flat) {
 	this->flat = flat;
 }
+
+std::string Adress::getCity()
+{
+	return city;
+}
+
+std::string Adress::getZipCode()
+{
+	return zipCode;
+}
+
+std::string Adress::getStreet()
+{
+	return street;
+}
+
+std::string Adress::getHouse()
+{
+	return house;
+}
+
+std::string Adress::getFlat()
+{
+	return flat;
+}
+
+Adress::Adress()
+{
+}
