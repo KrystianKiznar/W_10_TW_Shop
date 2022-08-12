@@ -9,8 +9,8 @@ ShoppingHandler::ShoppingHandler() {
 	listOptionsWindow = ListOptionsWindow(&stock);
 	sortByWindow = SortByWindow(&stock);
 	filterByWindow = FilterByWindow(&stock);
-	userDataWindow =UserDataWindow(order);
-	paymentWindow = PaymentWindow(&cart, order);
+	userDataWindow =UserDataWindow(&order);
+	paymentWindow = PaymentWindow(&cart, &order);
 }
 
 void ShoppingHandler::start() {
@@ -51,14 +51,4 @@ void ShoppingHandler::start() {
 		currentState= static_cast<state>(window->displayWindow());
 	}
 
-}
-
-void ShoppingHandler::cancelTheOrder() {
-	order->setSusscesful(false);
-	//TODO: save order to the file
-	delete order;
-}
-
-void ShoppingHandler::newOrder() {
-	order = new Order();
 }

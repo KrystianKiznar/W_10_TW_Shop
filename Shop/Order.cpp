@@ -63,3 +63,33 @@ Order::Order(User us, Cart cart) {
 void Order::setSusscesful(bool succesful) {
 	this->succesful = succesful;
 }
+
+void Order::setName(std::string name) {
+	user.setName(name);
+}
+
+void Order::setLastname(std::string lastname) {
+	user.setLastname(lastname);
+}
+
+void Order::setEmail(std::string email) {
+	user.setEmail(email);
+}
+
+void Order::setPhoneNumber(std::string phoneNumber) {
+	user.setPhoneNumber(phoneNumber);
+}
+
+void Order::setShippingAdress(Adress adress) {
+	user.setShippingAdress(adress);
+}
+
+void Order::setBillingAdress(Adress adress) {
+	user.setBillingAdress(adress);
+}
+
+void Order::clearOrder() {
+	succesful = false;
+	cart = Cart();
+	user = User();
+}

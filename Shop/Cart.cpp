@@ -45,7 +45,7 @@ void Cart::displeyMyCart() {
 	}
 }
 
-std::map<Product*, int> Cart::getCart()
+std::map<Product*, int>& Cart::getCart()
 {
 	return myCart;
 }

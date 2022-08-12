@@ -1,15 +1,13 @@
 #include "UserDataWindow.h"
 
 
-UserDataWindow::UserDataWindow()
-{
-}
+UserDataWindow::UserDataWindow(){}
 
 UserDataWindow::UserDataWindow(Order* order) {
 	this->order = order;
 }
 
-bool UserDataWindow::validation(std::regex x, std::string y)
+bool UserDataWindow::validation(std::regex x, std::string& y)
 {
 	getline(std::cin, y);
 
@@ -44,6 +42,7 @@ state UserDataWindow::displayWindow()
 			}
 		n++;
 	} 
+	order->setName(firstName);
 	n = 0;
 	while (isValid ==UserDataWindow::validation(nameReg, lastName)) {
 		std::cout << "\n";
@@ -56,7 +55,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	order->setLastname(lastName);
 	n = 0;
 	while (isValid == UserDataWindow::validation(phoneReg, phoneNum)) {
 		std::cout << "\n";
@@ -69,7 +68,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	order->setPhoneNumber(phoneNum);
 	n = 0;
 	while (isValid == UserDataWindow::validation(emailReg, email)) {
 		std::cout << "\n";
@@ -82,7 +81,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	order->setEmail(email);
 	n = 0;
 	while (isValid == UserDataWindow::validation(nameReg, street)) {
 		std::cout << "\n";
@@ -95,7 +94,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	Adress address;
 	n = 0;
 	while (isValid == UserDataWindow::validation(nameReg, street)) {
 		std::cout << "\n";
@@ -108,7 +107,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-	
+	address.setStreet(street);
 	n = 0;
 	while (isValid == UserDataWindow::validation(houseflatReg, house)) {
 		std::cout << "\n";
@@ -121,7 +120,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	address.setHouse(house);
 	n = 0;
 	while (isValid == UserDataWindow::validation(codeReg, zipCode)) {
 		std::cout << "\n";
@@ -134,7 +133,7 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	address.setZipCode(zipCode);
 	n = 0;
 	while (isValid == UserDataWindow::validation(nameReg, city)) {
 		std::cout << "\n";
@@ -147,9 +146,10 @@ state UserDataWindow::displayWindow()
 		}
 		n++;
 	}
-
+	address.setCity(city);
 	std::cout << "\n";
-
+	order->setShippingAdress(address);
+	order->setBillingAdress(address);
 		// print list of choices 
 		std::cout << "OPTIONS" << std::endl << std::endl;
 		std::cout << "1. Payment" << std::endl;
@@ -166,9 +166,11 @@ state UserDataWindow::displayWindow()
 			break;
 		case 2:
 			nextState = state::exit; 
+			cancelTheOrder();
 			break;
 		case 3:
 			nextState = state::cart; 
+			cancelTheOrder();
 			break;
 
 		}
@@ -178,3 +180,14 @@ state UserDataWindow::displayWindow()
 		return nextState;
 	}
 
+	//void UserDataWindow::newOrder() {
+	//	order->clearOrder();
+	//	//TODO: Check what happens after executing that line: delete temp;
+	//}
+
+	void UserDataWindow::cancelTheOrder() {
+		order->setSusscesful(false);
+		//TODO: save order to the file
+		order->saveOrder();
+		order->clearOrder();
+	}

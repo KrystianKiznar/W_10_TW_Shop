@@ -9,6 +9,7 @@ class User
 	std::string phoneNum;
 	Adress shippingAdress;
 	Adress billingAdress;
+
 public:
 	void setName(std::string name);
 	void setLastname(std::string lastname);

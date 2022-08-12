@@ -92,3 +92,9 @@ state PaymentWindow::displayWindow() {
 
 	return nextState;
 }
+
+void PaymentWindow::cancelTheOrder() {
+	order->setSusscesful(false);
+	//TODO: save order to the file
+	order->clearOrder();
+}

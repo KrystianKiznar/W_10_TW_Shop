@@ -12,6 +12,8 @@ public:
     // Inherited via Window
     virtual state displayWindow() override;
 
+    void cancelTheOrder();
+
 private:
     Cart* cartPtr;
     Order* order;

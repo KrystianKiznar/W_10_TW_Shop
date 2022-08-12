@@ -17,8 +17,6 @@ public:
 	ShoppingHandler();
 	void start();
 
-	void cancelTheOrder();
-	void newOrder();
 
 private:
 	Window* window;
@@ -33,7 +31,7 @@ private:
 
 	Stock stock;
 	Cart cart;
-	Order* order;
+	Order order;
 	
 };
 
