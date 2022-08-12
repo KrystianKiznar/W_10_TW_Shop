@@ -119,6 +119,6 @@ std::string Order::getFileName()
 	fileName = getDate();
 	fileName += '/';
 	fileName += user.getFirstName();
-	fileName += ".cvv";
+	fileName += ".csv";
 	return fileName;
 }
