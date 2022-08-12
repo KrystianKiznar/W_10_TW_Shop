@@ -1,12 +1,17 @@
 #include "Order.h"
 #include <fstream>
 #include <iostream>
+#include <iomanip>
+#include <ctime>
+#include <sstream>
 
 
 void Order::saveOrder() {
 
 	std::ofstream file;
-	file.open("orderDetails.csv");
+	std::string fileName = getFileName();
+
+	file.open(fileName);
 	if (file.is_open() == true) {
 		//BASIC INFO ABOUT CLIENT
 		file << "USER NAME: ";
@@ -92,4 +97,28 @@ void Order::clearOrder() {
 	succesful = false;
 	cart = Cart();
 	user = User();
+}
+
+std::string Order::getDate() {
+
+	//std::string date{};
+	auto t = std::time(nullptr);
+	auto tm = *std::localtime(&t);
+
+	std::ostringstream oss;
+	oss << std::put_time(&tm, "%d-%m-%Y");
+	auto date = oss.str();
+
+	return date;
+}
+
+std::string Order::getFileName()
+{
+	std::string fileName{};
+
+	fileName = getDate();
+	fileName += '/';
+	fileName += user.getFirstName();
+	fileName += ".cvv";
+	return fileName;
 }

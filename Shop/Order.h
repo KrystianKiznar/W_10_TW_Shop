@@ -6,6 +6,7 @@ class Order
 {
 	Cart cart;
 	User user;
+
 	//Payment payment;
 	bool succesful;
 
@@ -14,6 +15,8 @@ public:
 	Order loadOrder(std::string path);
 	Order();
 	Order(User us, Cart cart);
+	std::string getDate();
+	std::string getFileName();
 
 	void setSusscesful(bool succesful);
 	void setName(std::string name);
