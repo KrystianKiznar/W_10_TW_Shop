@@ -34,7 +34,7 @@ state PaymentWindow::displayWindow() {
 	system("cls");
 	switch (usersChoice) {
 	case 1: // Credit card
-		//TODO: extract to seperate file
+		//TODO: extract to seperate method
 		// Ask for: card number, card holder, expiry date, CVV code
 		std::cout << "Card number:\t";
 		std::cin >> cardNumber;
@@ -50,7 +50,7 @@ state PaymentWindow::displayWindow() {
 		std::cout << std::endl;
 		break;
 	case 2: // Credit card
-		//TODO: extract to seperate file
+		//TODO: extract to seperate method
 		// Ask for: user name, password
 		std::cout << "Username:\t";
 		std::cin >> cardNumber;
