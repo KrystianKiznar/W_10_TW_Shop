@@ -8,6 +8,15 @@ PaymentWindow::PaymentWindow(Cart* cartPtr, Order* order) {
 	this->cartPtr = cartPtr;
 	this->order = order;
 }
+bool PaymentWindow::paymentValidation(std::regex x, std::string y)
+{
+	getline(std::cin, y);
+
+	if (std::regex_match(y, x))
+		return true;
+	else
+		return false;
+}
 
 state PaymentWindow::displayWindow() {
 
@@ -29,33 +38,101 @@ state PaymentWindow::displayWindow() {
 	std::cout << std::endl;
 	int usersChoice = takeUserInput(1, 3);
 
-	std::string cardNumber, cardHolder, expiryDate, cVVCode;
+	std::string cardNumber, cardHolderName, cardHolderLastName, expiryDate, cVVCode;
 	std::string username, password;
+	std::regex nameReg("[A-Z]{0,1}[a-z]{1,40}");
+	std::regex cardNumberReg("\\d{4}\\s{0,1}\\d{4}\\s{0,1}\\d{4}\\s{0,1}\\d{4}");
+	std::regex expiryDateReg("\\d{2}/{1}\\d{2}");
+	std::regex cVVCodeReg("\\d{3}");
+	bool isValid = false;
+	int n = 0;
 
 	system("cls");
 	switch (usersChoice) {
 	case 1: // Credit card
 		//TODO: extract to seperate method
 		// Ask for: card number, card holder, expiry date, CVV code
-		std::cout << "Card number:\t";
-		std::cin >> cardNumber;
-		std::cout << std::endl;
-		std::cout << "Card holder:\t";
-		std::cin >> cardHolder;
-		std::cout << std::endl;
-		std::cout << "Expiry date:\t";
-		std::cin >> expiryDate;
-		std::cout << std::endl;
-		std::cout << "CVV:\t";
-		std::cin >> cVVCode;
+
+
+		while (isValid == PaymentWindow::paymentValidation(cardNumberReg, cardNumber)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "Card number:\t";
+			}
+			else {
+				std::cout << "Card number:\t";
+			}
+			n++;
+		}
+		n = 0;
+
+		while (isValid == PaymentWindow::paymentValidation(nameReg, cardHolderName)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "Card holder name:\t";
+			}
+			else {
+				std::cout << "Card holder name:\t";
+			}
+			n++;
+		}
+		n = 0;
+		while (isValid == PaymentWindow::paymentValidation(nameReg, cardHolderLastName)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "Card holder last name:\t";
+			}
+			else {
+				std::cout << "Card holder last name:\t";
+			}
+			n++;
+		}
+		n = 0;
+		while (isValid == PaymentWindow::paymentValidation(expiryDateReg, expiryDate)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "Expiry date:\t";
+			}
+			else {
+				std::cout << "Expiry date:\t";
+			}
+			n++;
+		}
+		n = 0;
+		while (isValid == PaymentWindow::paymentValidation(cVVCodeReg, cVVCode)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "CVV:\t";
+			}
+			else {
+				std::cout << "CVV:\t";
+			}
+			n++;
+		}
+
 		std::cout << std::endl;
 		break;
 	case 2: // Credit card
 		//TODO: extract to seperate method
 		// Ask for: user name, password
-		std::cout << "Username:\t";
-		std::cin >> cardNumber;
-		std::cout << std::endl;
+		n = 0;
+		while (isValid == PaymentWindow::paymentValidation(cardNumberReg, cardNumber)) {
+			std::cout << "\n";
+			if (n > 0) {
+				std::cout << "Your details are not correct\n";
+				std::cout << "Username:\t";
+			}
+			else {
+				std::cout << "Username:\t";
+			}
+			n++;
+		}
+
 		std::cout << "Password:\t";
 		std::cin >> password;
 		std::cout << std::endl;
@@ -86,7 +163,6 @@ state PaymentWindow::displayWindow() {
 			break;
 		}
 	}
-	
 
 	system("pause");
 
