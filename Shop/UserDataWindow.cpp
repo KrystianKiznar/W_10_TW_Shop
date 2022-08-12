@@ -31,7 +31,6 @@ state UserDataWindow::displayWindow()
 	int n = 0;
 
 	while (isValid== UserDataWindow::validation(nameReg, firstName)){
-		std::cout << "\n";
 			if (n > 0) {
 				std::cout << "Your details are not correct\n";
 				std::cout << "FIRST NAME: ";
@@ -42,7 +41,7 @@ state UserDataWindow::displayWindow()
 	} 
 	n = 0;
 	while (isValid ==UserDataWindow::validation(nameReg, lastName)) {
-		std::cout << "\n";
+		
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "LAST NAME: ";
@@ -55,8 +54,7 @@ state UserDataWindow::displayWindow()
 
 	n = 0;
 	while (isValid == UserDataWindow::validation(phoneReg, phoneNum)) {
-		std::cout << "\n";
-		if (n > 0) {
+			if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "PHONE NUMBER: ";
 		}
@@ -68,7 +66,6 @@ state UserDataWindow::displayWindow()
 
 	n = 0;
 	while (isValid == UserDataWindow::validation(emailReg, email)) {
-		std::cout << "\n";
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "EMAIL ADRESS: ";
@@ -81,7 +78,6 @@ state UserDataWindow::displayWindow()
 
 	n = 0;
 	while (isValid == UserDataWindow::validation(nameReg, street)) {
-		std::cout << "\n";
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "STREET: ";
@@ -93,8 +89,7 @@ state UserDataWindow::displayWindow()
 	}
 
 	n = 0;
-	while (isValid == UserDataWindow::validation(nameReg, street)) {
-		std::cout << "\n";
+	while (isValid == UserDataWindow::validation(houseflatReg, house)) {
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "HOUSE: ";
@@ -106,8 +101,7 @@ state UserDataWindow::displayWindow()
 	}
 	
 	n = 0;
-	while (isValid == UserDataWindow::validation(houseflatReg, house)) {
-		std::cout << "\n";
+	while (isValid == UserDataWindow::validation(houseflatReg, flat)) {
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "FLAT: ";
@@ -120,7 +114,6 @@ state UserDataWindow::displayWindow()
 
 	n = 0;
 	while (isValid == UserDataWindow::validation(codeReg, zipCode)) {
-		std::cout << "\n";
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "ZIP CODE: ";
@@ -133,7 +126,6 @@ state UserDataWindow::displayWindow()
 
 	n = 0;
 	while (isValid == UserDataWindow::validation(nameReg, city)) {
-		std::cout << "\n";
 		if (n > 0) {
 			std::cout << "Your details are not correct\n";
 			std::cout << "CITY: ";
@@ -173,4 +165,3 @@ state UserDataWindow::displayWindow()
 
 		return nextState;
 	}
-
