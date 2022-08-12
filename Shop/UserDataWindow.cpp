@@ -5,6 +5,10 @@ UserDataWindow::UserDataWindow()
 {
 }
 
+UserDataWindow::UserDataWindow(Order* order) {
+	this->order = order;
+}
+
 bool UserDataWindow::validation(std::regex x, std::string y)
 {
 	getline(std::cin, y);

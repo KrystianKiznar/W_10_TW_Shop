@@ -4,8 +4,9 @@ PaymentWindow::PaymentWindow() {
 	this->cartPtr = nullptr;
 }
 
-PaymentWindow::PaymentWindow(Cart* cartPtr) {
+PaymentWindow::PaymentWindow(Cart* cartPtr, Order* order) {
 	this->cartPtr = cartPtr;
+	this->order = order;
 }
 
 state PaymentWindow::displayWindow() {

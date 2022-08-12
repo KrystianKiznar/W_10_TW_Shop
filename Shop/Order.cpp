@@ -53,7 +53,13 @@ void Order::saveOrder() {
 	std::cout << "The file could not be open!";
 }
 
+Order::Order() {}
+
 Order::Order(User us, Cart cart) {
 	this->user = us;
 	this->cart = cart;
+}
+
+void Order::setSusscesful(bool succesful) {
+	this->succesful = succesful;
 }

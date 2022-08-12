@@ -9,12 +9,16 @@
 #include "UserDataWindow.h"
 #include "Cart.h"
 #include "PaymentWindow.h"
+#include "Order.h"
 
 class ShoppingHandler {
 public:
 
 	ShoppingHandler();
 	void start();
+
+	void cancelTheOrder();
+	void newOrder();
 
 private:
 	Window* window;
@@ -26,9 +30,10 @@ private:
 	FilterByWindow filterByWindow;
 	UserDataWindow userDataWindow;
 	PaymentWindow paymentWindow;
+
 	Stock stock;
 	Cart cart;
-	
+	Order* order;
 	
 };
 
