@@ -71,7 +71,7 @@ state CartWindow::displayWindow() {
 		cartChanges(usersChoice);
 		break;
 	case 4:
-		nextState = state::payment;
+		nextState = state::userDataWindow;
 		break;
 	case 5:
 		nextState = state::menu;

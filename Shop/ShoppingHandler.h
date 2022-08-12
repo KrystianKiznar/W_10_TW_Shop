@@ -6,6 +6,7 @@
 #include "ListOptionsWindow.h"
 #include "SortByWindow.h"
 #include "FilterByWindow.h"
+#include "UserDataWindow.h"
 #include "Cart.h"
 #include "PaymentWindow.h"
 
@@ -23,9 +24,11 @@ private:
 	ListOptionsWindow listOptionsWindow;
 	SortByWindow sortByWindow;
 	FilterByWindow filterByWindow;
+	UserDataWindow userDataWindow;
 	PaymentWindow paymentWindow;
 	Stock stock;
 	Cart cart;
+	
 	
 };
 

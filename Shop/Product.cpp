@@ -43,8 +43,8 @@ void Product::showCategory(categoryEnum cat) {
 
 void Product::showSupplier(supplierEnum sup) {
 	switch (sup) {
-	case supplierEnum::poland: std::cout << "Poland"; break;
-	case supplierEnum::china: std::cout << "China"; break;
+	case supplierEnum::poland: std::cout << "Poland "; break;
+	case supplierEnum::china: std::cout << "China  "; break;
 	case supplierEnum::germany: std::cout << "Germany"; break;
 	}
 }
