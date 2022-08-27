@@ -12,6 +12,7 @@ void Order::saveOrder() {
 	std::string fileName = getFileName();
 
 	file.open(fileName);
+	//file.open("orderDetails.csv");
 	if (file.is_open() == true) {
 		//BASIC INFO ABOUT CLIENT
 		file << "USER NAME: ";
@@ -55,7 +56,7 @@ void Order::saveOrder() {
 		file << cart.sum();
 		file.close();
 	}
-	std::cout << "The file could not be open!";
+	//std::cout << "The file could not be open!";
 }
 
 Order::Order() {}
@@ -117,7 +118,7 @@ std::string Order::getFileName()
 	std::string fileName{};
 
 	fileName = getDate();
-	fileName += '/';
+	fileName += '-';
 	fileName += user.getFirstName();
 	fileName += ".csv";
 	return fileName;

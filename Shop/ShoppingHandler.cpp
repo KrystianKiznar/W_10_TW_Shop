@@ -16,9 +16,9 @@ ShoppingHandler::ShoppingHandler() {
 void ShoppingHandler::start() {
 
 	stock.initialize();
-	state currentState= state::menu; 
+	state currentState = state::menu; 
 
-	while (currentState!= state::exit) {
+	while (currentState != state::exit) {
 
 		switch (currentState) {
 		case state::menu:
@@ -42,13 +42,12 @@ void ShoppingHandler::start() {
 		case state::userDataWindow:
 			window = &userDataWindow;
 			break;
-
 		case state::payment:
 			window = &paymentWindow;
 			break;
 		}
 		
-		currentState= static_cast<state>(window->displayWindow());
+		currentState = window->displayWindow();
 	}
 
 }

@@ -403,3 +403,4 @@ FodyWeavers.xsd
 /Output-Build.txt
 /ClassDiagram.cd
 /database.csv
+*.csv
